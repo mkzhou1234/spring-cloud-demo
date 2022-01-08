@@ -15,10 +15,12 @@ import org.springframework.web.client.RestTemplate;
  * @Author adanmint@163.com
  * @Date 2022-01-08 1:05 PM
  */
+/*
 @Configuration
+*/
 public class RestTemplateConfig {
 
-    /*@Bean
+/*    @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate(getClientHttpRequestFactory());
@@ -40,6 +42,6 @@ public class RestTemplateConfig {
     public static final int HTTP_SOCKET_TIMEOUT = 15000;
 
     *//** http请求连接超时时间,毫秒为单位 *//*
-    public static final int HTTP_CONNECT_TIMEOUT = 15000;
-*/
+    public static final int HTTP_CONNECT_TIMEOUT = 15000;*/
+
 }
