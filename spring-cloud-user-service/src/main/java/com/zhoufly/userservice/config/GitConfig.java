@@ -1,0 +1,25 @@
+package com.zhoufly.userservice.config;
+
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Component;
+
+/**
+ * @Description
+ * @Author adanmint@163.com
+ * @Date 2022-01-07 3:03 PM
+ */
+@Data
+@Component
+public class GitConfig {
+
+    @Value("${data.env}")
+    private String env;
+
+    @Value("${data.user.username}")
+    private String username;
+
+    @Value("${data.user.password}")
+    private String password;
+}
