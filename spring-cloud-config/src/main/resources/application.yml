@@ -7,9 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/seamzhou/springcloud-demo
+          uri: https://github.com/seamzhou/spring-config
           #uri: https://github.com/huzhicheng/config-only-a-demo
           username: adanmint@163.com
           password: zhouwenjun123
-          default-label: main
-          search-paths: config-data
+          default-label: master
+          search-paths: config-demo

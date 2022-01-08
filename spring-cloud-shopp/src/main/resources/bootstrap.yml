@@ -4,13 +4,12 @@ spring:
 
 ---
 spring:
-  #profiles: prod
   application:
-    name: config-single-client
+    name: shopp-service
   cloud:
     config:
       uri: http://localhost:10001
-      label: main
+      label: master
       profile: prod
   config:
     activate:
@@ -20,7 +19,7 @@ spring:
 ---
 spring:
   application:
-    name: user-service
+    name: shopp-service
   cloud:
     config:
       uri: http://localhost:10001
