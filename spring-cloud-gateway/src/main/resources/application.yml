@@ -1,23 +1,33 @@
 server:
   port: 8080
-  servlet:
-    context-path: /
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
 
 spring:
   application:
-    name: gateway
+    name: spring-cloud-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          filters[0]: PreserveHostHeader   #支持注册服务可以具有根路径
+          enabled: true
+          lower-case-service-id: true
       routes:
-        - id: open
-          uri: lb://open
+        - id: shopp-service-route
+          uri: lb://shopp-service
           predicates:
-            - Path=/open/**
+            - Path=/shopp-service/**
           filters:
             - StripPrefix= 1
-        - id: system
-          uri: lb://system
-          predicates:
-            - Path=/system/**
-          filters:
-            - StripPrefix= 1
+logging:
+  level:
+    root: info
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.springframework.cloud.sleuth: DEBUG
